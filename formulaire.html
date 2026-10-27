@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Formulaire · CEFI2</title>
+<meta name="description" content="Toutes les formules CEFI2 à connaître par cœur, avec un exemple chiffré.">
+<meta name="theme-color" content="#f6f5f1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<script>try{var t=localStorage.getItem("cefi2-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="formulaire">
+<header class="top">
+  <a class="brand" href="index.html">CEFI2 <small>· Formulaire</small></a>
+  <span class="offline-badge">hors ligne</span>
+  <button class="iconbtn" id="theme-btn" type="button" aria-label="Changer de thème">☾</button>
+</header>
+
+<main>
+<h1>Formulaire</h1>
+<p class="lead">Aucun document à l'examen : tout ceci doit être su par cœur. Chaque formule a un exemple tiré du cours ou des exercices.</p>
+<nav class="chips" aria-label="Rubriques">
+  <a href="#f-couts">Coûts</a><a href="#f-sr">Seuil</a><a href="#f-cr">Résultat &amp; CAF</a>
+  <a href="#f-flux">Flux</a><a href="#f-crit">Critères</a><a href="#f-re">Rentabilité</a>
+</nav>
+
+<h2 id="f-couts">Coûts et TCO</h2>
+<div class="card">
+  <h3>Résultat</h3>
+  <div class="formula">Résultat = produits − charges</div>
+</div>
+<div class="card">
+  <h3>TCO (coût total de possession)</h3>
+  <div class="formula">TCO = Build + Σ Run (sur la durée de vie)</div>
+  <p class="ex">Solution A sur 8 ans : 900 K€ de Build + 250 K€ de Run = 1 150 K€ (B : 500 + 950 = 1 450 K€).</p>
+</div>
+<div class="card">
+  <h3>Coût salarial proratisé</h3>
+  <div class="formula">Coût = nb personnes × salaire annuel chargé × durée (mois) / 12</div>
+  <p class="ex">3 développeurs à 75 k€/an pendant 8 mois : 3 × 75 × 8/12 = 150 k€.</p>
+</div>
+<div class="card">
+  <h3>Coût variable annualisé</h3>
+  <div class="formula">Run variable = coût unitaire mensuel × 12 × volume</div>
+  <p class="ex">0,35 €/utilisateur/mois × 12 × 5 000 utilisateurs = 21 000 €/an.</p>
+</div>
+
+<h2 id="f-sr">Marge et seuil de rentabilité</h2>
+<div class="card">
+  <div class="formula">MCV = CA − CV</div>
+  <div class="formula">TMCV = MCV / CA</div>
+  <div class="formula">Résultat = MCV − CF = TMCV × CA − CF</div>
+  <div class="formula">SR (en CA) = CF / TMCV</div>
+  <p class="ex">CA 28 000, CV 20 000, CF 5 000 : TMCV = 8 000/28 000 = 28,57 % ; SR = 5 000 / 0,2857 = 17 500 €.</p>
+</div>
+<div class="card">
+  <h3>Seuil en quantité <span class="tag">complément</span></h3>
+  <div class="formula">SR (en unités) = CF / MCV unitaire  → arrondir à l'unité supérieure</div>
+  <p class="ex">CF 560 000 € (dont amortissements), MCV par client 15 000 − 3 000 = 12 000 € : 46,7 → 47 clients.</p>
+</div>
+<div class="card">
+  <h3>Marge de sécurité</h3>
+  <div class="formula">MS = CA − SR   ;   indice MS = (CA − SR) / CA</div>
+  <p class="ex">(28 000 − 17 500) / 28 000 = 37,5 % : le CA peut baisser de 37,5 % avant la perte.</p>
+</div>
+<div class="card">
+  <h3>Taux de marge sur coûts directs (direct costing)</h3>
+  <div class="formula">Taux de contribution = (CA − coûts directs variables) / CA</div>
+  <p class="ex">Produit A : (550 000 − 260 000) / 550 000 = 52,7 % ≈ 53 %.</p>
+</div>
+
+<h2 id="f-cr">Résultat prévisionnel et CAF</h2>
+<div class="card">
+  <div class="formula">REX = CA − CV − CF − amortissements</div>
+  <div class="formula">Résultat avant IS = REX − frais financiers</div>
+  <div class="formula">IS = taux × résultat avant IS</div>
+  <div class="formula">Résultat net = résultat avant IS − IS</div>
+  <div class="formula">CAF = résultat net + amortissements</div>
+  <p class="ex">Start-up année 2 : 900 000 − 180 000 − 460 000 − 100 000 = REX 160 000 ; IS 25 % = 40 000 ; RN 120 000 ; CAF = 120 000 + 100 000 = 220 000 €.</p>
+</div>
+<div class="card">
+  <h3>Amortissement linéaire</h3>
+  <div class="formula">Annuité = valeur amortissable / durée</div>
+  <p class="ex">500 000 € sur 5 ans = 100 000 €/an. VNC après k années = valeur − k × annuité.</p>
+</div>
+<div class="card">
+  <h3>CAF d'un projet d'économies <span class="tag">complément</span></h3>
+  <div class="formula">CAF = (économies − charges décaissées) × (1 − t) + t × amortissements</div>
+  <p class="ex">DataFlow année 1 : 165 000 × 0,75 + 0,25 × 120 000 = 153 750 € (= même résultat que RN + amortissements).</p>
+</div>
+
+<h2 id="f-flux">Flux de trésorerie et financement</h2>
+<div class="card">
+  <div class="formula">Flux net = CAF − investissements − ΔBFR + valeur résiduelle nette</div>
+  <p class="ex">AlfaM (archi. A) année 1 : CAF 10 400 − ΔBFR 10 000 = 400 €.</p>
+</div>
+<div class="card">
+  <h3>Valeur résiduelle nette d'IS</h3>
+  <div class="formula">VR nette = prix de cession − t × (prix de cession − VNC)</div>
+  <p class="ex">GPU totalement amortis revendus 120 k€ : 120 − 25 % × 120 = 90 k€. Extension (VNC 100 k€) revendue 100 k€ : pas d'IS.</p>
+</div>
+<div class="card">
+  <h3>Plan de financement</h3>
+  <div class="formula">Ressources = apports + subventions + emprunts + CAF</div>
+  <div class="formula">Besoins = investissements + ΔBFR (+ remboursements d'emprunt)</div>
+  <div class="formula">Flux net = ressources − besoins ; on cumule</div>
+  <p class="ex">Start-up année 1 : (160 000 + 50 000 − 100 000) − (500 000 + 40 000) = −430 000 € → financement à trouver.</p>
+</div>
+
+<h2 id="f-crit">Critères de choix d'investissement</h2>
+<div class="card">
+  <h3>Délai de récupération</h3>
+  <div class="formula">Flux constants : délai = investissement / flux annuel</div>
+  <div class="formula">Sinon : délai = (n − 1) + |cumul fin n−1| / flux de l'année n</div>
+  <p class="ex">150 000 / 50 000 = 3 ans. Cumuls −90 000, −50 000, −5 000 puis flux de 35 000 : 3 + 5 000/35 000 = 3,14 ans ≈ 3 ans 1 mois 21 jours.</p>
+</div>
+<div class="card">
+  <h3>Coefficient d'actualisation</h3>
+  <div class="formula">(1 + i)<sup>−t</sup> = 1 / (1 + i)<sup>t</sup></div>
+  <p class="ex">i = 15 % : 1 / 1,15 = 0,870 ; i = 8 % : 1 / 1,08 = 0,926 ; 1 / 1,08² = 0,857.</p>
+</div>
+<div class="card">
+  <h3>VAN</h3>
+  <div class="formula">VAN = Σ F<sub>t</sub> (1 + i)<sup>−t</sup> − I<sub>0</sub></div>
+  <p class="ex">Projet A à 8 % : 462 963 + 428 669 + 277 841 + 183 757 − 1 000 000 = 353 231 €.</p>
+  <p class="muted">Règle : VAN &gt; 0 → rentable ; entre deux projets, la VAN la plus forte.</p>
+</div>
+<div class="card">
+  <h3>Indice de profitabilité</h3>
+  <div class="formula">IP = Σ flux actualisés / I<sub>0</sub> = 1 + VAN / I<sub>0</sub></div>
+  <p class="ex">1 353 231 / 1 000 000 = 1,35 → 0,35 € de richesse créée par euro investi.</p>
+</div>
+<div class="card">
+  <h3>TRI</h3>
+  <div class="formula">TRI : taux tel que VAN = 0</div>
+  <p class="ex">VAN positive à 8 %, nulle à 12 % → TRI = 12 % : le projet supporte un coût du capital jusqu'à 12 %.</p>
+</div>
+<div class="card">
+  <h3>ROI</h3>
+  <div class="formula">ROI = bénéfices générés / investissement initial</div>
+  <p class="ex">Investissement 800 K€, gains 1 600 K€ → bénéfice 800 K€ → ROI = 100 %, quelle que soit la durée (6 ans !) : c'est sa limite.</p>
+</div>
+
+<h2 id="f-re">Profitabilité et rentabilité</h2>
+<div class="card">
+  <div class="formula">Profitabilité = résultat / CA  (EBIT / CA ; RN / CA)</div>
+  <div class="formula">Rentabilité financière = RN / capitaux propres</div>
+</div>
+<div class="card">
+  <h3>Rentabilité économique</h3>
+  <div class="formula">Ressources économiques = investissements + BFR</div>
+  <div class="formula">Re = REX / ressources économiques</div>
+  <div class="formula">Re = (REX / CA) × (CA / ressources) = marge × rotation</div>
+  <p class="ex">Projet A : REX 150 / gains 1 500 = 10 % ; rotation 1 500 / 500 = 3 ; Re = 10 % × 3 = 30 % (= 150 / 500).</p>
+</div>
+
+<div class="info"><p><b>Conventions d'arrondi utilisées sur le site</b> : montants à l'euro près ; coefficients d'actualisation affichés au millième ;
+chaque flux actualisé = flux × coefficient exact, arrondi à l'euro (méthode des slides). Avec des coefficients arrondis au millième
+on trouve parfois quelques euros d'écart : les deux sont acceptés en examen si la méthode est claire.</p></div>
+</main>
+
+<nav class="tabs" aria-label="Navigation principale">
+  <a href="cours.html" data-page="cours"><span aria-hidden="true">📘</span>Cours</a>
+  <a href="formulaire.html" data-page="formulaire"><span aria-hidden="true">∑</span>Formules</a>
+  <a href="methodes.html" data-page="methodes"><span aria-hidden="true">🧭</span>Méthodes</a>
+  <a href="exercices.html" data-page="exercices"><span aria-hidden="true">✍️</span>Exos</a>
+  <a href="quiz.html" data-page="quiz"><span aria-hidden="true">❓</span>Quiz</a>
+  <a href="calculs.html" data-page="calculs"><span aria-hidden="true">🧮</span>Calculs</a>
+</nav>
+</body>
+</html>

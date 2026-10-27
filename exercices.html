@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exercices corrigés · CEFI2</title>
+<meta name="description" content="Les 13 exercices CEFI2 corrigés étape par étape.">
+<meta name="theme-color" content="#f6f5f1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<script>try{var t=localStorage.getItem("cefi2-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js" defer></script>
+<script src="js/exos-data.js" defer></script>
+<script src="js/exos.js" defer></script>
+</head>
+<body data-page="exercices">
+<header class="top">
+  <a class="brand" href="index.html">CEFI2 <small>· Exercices</small></a>
+  <span class="offline-badge">hors ligne</span>
+  <button class="iconbtn" id="theme-btn" type="button" aria-label="Changer de thème">☾</button>
+</header>
+
+<main>
+<h1>Exercices corrigés</h1>
+<p class="lead">Les 13 exercices des supports. Corrections calculées par <code>tools/verif.py</code> ; montants à l'euro près,
+coefficients d'actualisation au millième (détail des conventions dans le <a href="formulaire.html#f-crit">formulaire</a>).</p>
+<p class="muted" id="exo-count"></p>
+<div class="chips" role="group" aria-label="Filtrer par partie">
+  <button type="button" class="chip" data-filter="all" aria-pressed="true">Tous</button>
+  <button type="button" class="chip" data-filter="1" aria-pressed="false">Partie 1 · Coûts</button>
+  <button type="button" class="chip" data-filter="2" aria-pressed="false">Partie 2 · Rentabilité</button>
+  <button type="button" class="chip" data-filter="3" aria-pressed="false">Partie 3 · BP</button>
+</div>
+<div id="exo-list"><p class="muted">Chargement…</p></div>
+<noscript><p class="warn">JavaScript est nécessaire pour afficher les exercices.</p></noscript>
+</main>
+
+<nav class="tabs" aria-label="Navigation principale">
+  <a href="cours.html" data-page="cours"><span aria-hidden="true">📘</span>Cours</a>
+  <a href="formulaire.html" data-page="formulaire"><span aria-hidden="true">∑</span>Formules</a>
+  <a href="methodes.html" data-page="methodes"><span aria-hidden="true">🧭</span>Méthodes</a>
+  <a href="exercices.html" data-page="exercices"><span aria-hidden="true">✍️</span>Exos</a>
+  <a href="quiz.html" data-page="quiz"><span aria-hidden="true">❓</span>Quiz</a>
+  <a href="calculs.html" data-page="calculs"><span aria-hidden="true">🧮</span>Calculs</a>
+</nav>
+</body>
+</html>

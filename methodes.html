@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Méthodes · CEFI2</title>
+<meta name="description" content="Méthodes pas à pas : TCO, compte de résultat prévisionnel, tableau de flux, plan de financement.">
+<meta name="theme-color" content="#f6f5f1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<script>try{var t=localStorage.getItem("cefi2-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="methodes">
+<header class="top">
+  <a class="brand" href="index.html">CEFI2 <small>· Méthodes</small></a>
+  <span class="offline-badge">hors ligne</span>
+  <button class="iconbtn" id="theme-btn" type="button" aria-label="Changer de thème">☾</button>
+</header>
+
+<main>
+<h1>Méthodes pas à pas</h1>
+<p class="lead">Les 4 tableaux qui reviennent à l'examen, dans l'ordre où on les construit, avec les pièges.</p>
+<nav class="chips" aria-label="Méthodes">
+  <a href="#m-tco">Build / Run / TCO</a><a href="#m-cr">Résultat prévisionnel</a>
+  <a href="#m-flux">Tableau de flux</a><a href="#m-pf">Plan de financement</a><a href="#m-pieges">Pièges</a><a href="#m-redac">Rédiger</a>
+</nav>
+
+<details class="fold" id="m-tco" open>
+<summary>1. Tableau Build / Run / TCO</summary>
+<div class="body">
+  <ol>
+    <li><b>Lister chaque coût</b> et noter son unité : une fois (€), par an (€/an), par mois (→ × 12), par utilisateur / capteur / bâtiment.</li>
+    <li><b>Classer</b> : Build = mise en place, une seule fois (matériel, installation, développement, configuration, tests, audit, formation initiale) ; Run fixe = récurrent indépendant du volume (maintenance, licences annuelles, salaires d'exploitation, abonnement fixe, support) ; Run variable = proportionnel au volume.</li>
+    <li><b>Calculer le Run année par année</b> : Run fixe + coût unitaire × volume de l'année. Ajouter les événements (extension, renouvellement, maintenance supplémentaire) à la bonne année.</li>
+    <li><b>TCO</b> = Build + Σ Run sur la période demandée. Présenter aussi le cumul par année pour voir quand une solution devient moins chère.</li>
+    <li><b>Point d'équilibre</b> (Run constants) : Build<sub>1</sub> + n × Run<sub>1</sub> = Build<sub>2</sub> + n × Run<sub>2</sub> → n = ΔBuild / ΔRun.</li>
+    <li><b>Conclure</b> : chiffres + horizon + critères non financiers (flexibilité, compétences, sécurité, dépendance au fournisseur, trésorerie).</li>
+  </ol>
+  <div class="trap"><p><b>Pièges</b> : salaire annuel sur une durée en mois (proratiser) ; abonnement mensuel (× 12) ; coût « au-delà de X » (seuil strict : 30 000 n'est pas « au-delà » de 30 000) ; renouvellement du matériel (classé en Run dans le cours, « remplacement en fin de vie ») ; ne pas oublier la maintenance des postes ajoutés.</p></div>
+  <div class="key"><p>Message du cours à placer : « une décision qui augmente le coût initial peut réduire fortement le coût global ».</p></div>
+</div>
+</details>
+
+<details class="fold" id="m-cr">
+<summary>2. Compte de résultat prévisionnel → CAF</summary>
+<div class="body">
+  <div class="tw"><table>
+    <thead><tr><th>Ligne</th><th>Comment la calculer</th></tr></thead>
+    <tbody>
+      <tr><th>CA</th><td>clients × prix (+ frais ponctuels × nouveaux clients). Pour un projet d'économies : économies réalisées.</td></tr>
+      <tr><th>− CV</th><td>coût unitaire × volume ; commissions = % du CA concerné</td></tr>
+      <tr><th>− CF</th><td>charges fixes décaissées (salaires, loyers, licences, maintenance…)</td></tr>
+      <tr><th>− Amortissements</th><td>investissement / durée (linéaire), dès l'année de mise en service</td></tr>
+      <tr class="tot"><th>= REX</th><td>résultat d'exploitation</td></tr>
+      <tr><th>− Frais financiers</th><td>intérêts d'emprunt (seulement si le taux est donné)</td></tr>
+      <tr class="tot"><th>= Résultat avant IS</th><td></td></tr>
+      <tr><th>− IS</th><td>taux × résultat avant IS (voir piège sur les pertes)</td></tr>
+      <tr class="tot"><th>= Résultat net</th><td></td></tr>
+      <tr class="tot"><th>CAF</th><td>résultat net + amortissements</td></tr>
+    </tbody></table></div>
+  <div class="trap">
+    <p><b>Pièges</b></p>
+    <ul>
+      <li><b>L'amortissement n'est pas décaissé</b> : il diminue le résultat (donc l'IS) puis on le rajoute pour la CAF. Ne jamais mettre l'amortissement ET l'investissement dans les flux.</li>
+      <li><b>Formation passée en charges</b> : pas d'amortissement ; c'est une charge de l'année où elle est faite (souvent l'année 0).</li>
+      <li><b>Résultat négatif</b> : entreprise existante et bénéficiaire → économie d'IS (IS négatif) ; start-up sans autre activité → IS = 0. <span class="tag">complément</span> report des déficits possible si demandé.</li>
+      <li>Les frais financiers ne vont <b>pas</b> dans les flux servant à la VAN (le taux d'actualisation rémunère déjà les capitaux) <span class="tag">complément</span>.</li>
+      <li>Taux d'IS non donné : l'écrire comme hypothèse (25 % dans ce cours).</li>
+    </ul>
+  </div>
+</div>
+</details>
+
+<details class="fold" id="m-flux">
+<summary>3. Tableau des flux → délai, VAN, IP</summary>
+<div class="body">
+  <div class="tw"><table>
+    <thead><tr><th></th><th>A0</th><th>A1 … An</th></tr></thead>
+    <tbody>
+      <tr><th>− Investissements</th><td>initial (+ formation)</td><td>extensions, renouvellements</td></tr>
+      <tr><th>+ CAF</th><td></td><td>chaque année</td></tr>
+      <tr><th>− Variation du BFR</th><td>BFR de démarrage</td><td>augmentations (+ récupération finale si l'énoncé le dit)</td></tr>
+      <tr><th>+ Valeur résiduelle nette</th><td></td><td>dernière année</td></tr>
+      <tr class="tot"><th>= Flux net</th><td></td><td></td></tr>
+      <tr><th>Flux cumulés</th><td colspan="2">→ délai de récupération</td></tr>
+      <tr><th>× (1 + i)<sup>−t</sup></th><td colspan="2">→ flux actualisés → VAN, IP</td></tr>
+    </tbody></table></div>
+  <ol>
+    <li>Écrire les flux nets année par année (convention : flux en fin d'année ; investissement initial en A0).</li>
+    <li>Cumuler pour le <b>délai</b> : année où le cumul devient positif, puis interpolation : (n − 1) + manque / flux de l'année n. Convertir en mois (× 12) et jours (× 30).</li>
+    <li>Coefficients (1 + i)<sup>−t</sup> au millième ; flux actualisés à l'euro près.</li>
+    <li><b>VAN</b> = Σ flux actualisés (A1…An) − I<sub>0</sub> ; <b>IP</b> = Σ flux actualisés / I<sub>0</sub>.</li>
+    <li>Interpréter : VAN &gt; 0 / IP &gt; 1 → rentable ; comparer ; liquidité (délai) vs rentabilité (VAN) ; durée de vie.</li>
+  </ol>
+  <div class="trap">
+    <p><b>Pièges</b></p>
+    <ul>
+      <li><b>BFR = variation</b> : on met chaque année l'<i>augmentation</i> du BFR, pas son niveau. S'il passe de 40 000 à 65 000, le flux est −25 000.</li>
+      <li><b>BFR récupéré ou non</b> en fin de période : suivre l'énoncé ; s'il ne dit rien, l'écrire comme hypothèse (le cours n'en parle pas).</li>
+      <li><b>Valeur résiduelle nette d'IS ou non</b> : si un taux d'IS est donné et que le bien est amorti, la plus-value (prix − VNC) est imposée. Si les flux sont donnés « tout faits », on ajoute la VR telle quelle.</li>
+      <li>Flux déjà nets donnés par l'énoncé : ne pas réappliquer l'IS.</li>
+      <li>« Début d'année 4 » = fin d'année 3 en toute rigueur ; la plupart des corrigés le placent dans la colonne A4. Indiquer son choix.</li>
+      <li>Le délai du cours est calculé sur flux <b>non actualisés</b>.</li>
+    </ul>
+  </div>
+</div>
+</details>
+
+<details class="fold" id="m-pf">
+<summary>4. Plan de financement</summary>
+<div class="body">
+  <ol>
+    <li><b>Ressources</b> : ressources propres (apports des associés, fonds propres), subventions, emprunts (année où ils sont versés), CAF de chaque année.</li>
+    <li><b>Besoins</b> : investissements (Build et extensions), variation du BFR, remboursements d'emprunt (si donnés).</li>
+    <li><b>Flux net</b> = ressources − besoins ; <b>flux nets cumulés</b> année après année.</li>
+    <li>Lire le tableau : un cumul négatif = trésorerie négative = le plan <b>n'est pas finançable en l'état</b>. Le montant manquant = le cumul le plus négatif.</li>
+    <li>Proposer des solutions : emprunt (avec frais financiers), investisseurs, subvention, étalement des investissements, réduction du BFR (délais clients/fournisseurs), architecture moins capitalistique (cloud).</li>
+  </ol>
+  <div class="trap"><p><b>Pièges</b> : la CAF peut être négative (année de perte) → elle diminue les ressources ; ne pas mettre le résultat net à la place de la CAF ; ne pas oublier le BFR de démarrage ; l'emprunt ne s'ajoute qu'une fois (l'année où il est encaissé).</p></div>
+  <div class="key"><p>Rentabilité (le projet crée-t-il de la valeur ?), financement (avec quelles ressources ?) et trésorerie (a-t-on l'argent à chaque instant ?) sont trois questions différentes : un projet rentable peut être infinançable.</p></div>
+</div>
+</details>
+
+<details class="fold" id="m-pieges">
+<summary>5. Check-list anti-pièges avant de rendre</summary>
+<div class="body">
+  <ul>
+    <li>☐ Unités homogènes (€ / k€, mois / an).</li>
+    <li>☐ Amortissements dans le résultat, investissements dans les flux, jamais les deux dans les flux.</li>
+    <li>☐ Formation : charge, pas d'amortissement.</li>
+    <li>☐ IS : taux donné ? économie d'IS si perte (entreprise existante) ?</li>
+    <li>☐ BFR en variation ; récupération finale ?</li>
+    <li>☐ Valeur résiduelle : nette d'IS ? dans la dernière année.</li>
+    <li>☐ Seuil de rentabilité : CF avec amortissements ; arrondi au client supérieur.</li>
+    <li>☐ Délai : interpolation, réponse en années + mois.</li>
+    <li>☐ VAN : signe, unité, phrase d'interprétation.</li>
+    <li>☐ Hypothèses écrites noir sur blanc quand l'énoncé est ambigu.</li>
+  </ul>
+</div>
+</details>
+
+<details class="fold" id="m-redac">
+<summary>6. Rédiger une conclusion d'examen</summary>
+<div class="body">
+  <p>Structure en 4 temps (5–6 lignes) :</p>
+  <ol>
+    <li><b>Résultat chiffré</b> : « Le projet A a une VAN de 353 231 € et un IP de 1,35… »</li>
+    <li><b>Interprétation</b> : « …il couvre le coût des capitaux de 8 % et crée 0,35 € de richesse par euro investi. »</li>
+    <li><b>Comparaison / nuance</b> : liquidité vs rentabilité, durée de vie, risque, sensibilité aux hypothèses.</li>
+    <li><b>Décision argumentée</b> + critères non financiers (valeur perçue, sécurité, flexibilité, compétences).</li>
+  </ol>
+  <div class="info"><p>Formules utiles : « le projet est rentable mais pas finançable en l'état », « la rentabilité n'est pas qu'une affaire de CA et de résultat », « la valeur créée justifie-t-elle le coût ? ».</p></div>
+</div>
+</details>
+</main>
+
+<nav class="tabs" aria-label="Navigation principale">
+  <a href="cours.html" data-page="cours"><span aria-hidden="true">📘</span>Cours</a>
+  <a href="formulaire.html" data-page="formulaire"><span aria-hidden="true">∑</span>Formules</a>
+  <a href="methodes.html" data-page="methodes"><span aria-hidden="true">🧭</span>Méthodes</a>
+  <a href="exercices.html" data-page="exercices"><span aria-hidden="true">✍️</span>Exos</a>
+  <a href="quiz.html" data-page="quiz"><span aria-hidden="true">❓</span>Quiz</a>
+  <a href="calculs.html" data-page="calculs"><span aria-hidden="true">🧮</span>Calculs</a>
+</nav>
+</body>
+</html>

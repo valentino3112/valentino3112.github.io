@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#1f5fbf"/>
+  <polyline points="104,360 200,268 268,316 404,168" fill="none" stroke="#ffffff" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="330,168 404,168 404,242" fill="none" stroke="#ffffff" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="112" y="200" font-family="Arial, Helvetica, sans-serif" font-size="150" font-weight="700" fill="#ffd166">€</text>
+</svg>

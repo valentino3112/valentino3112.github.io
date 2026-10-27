@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calculateurs · CEFI2</title>
+<meta name="description" content="Mini-calculateurs CEFI2 : VAN, IP, délai de récupération, seuil de rentabilité, TCO.">
+<meta name="theme-color" content="#f6f5f1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<script>try{var t=localStorage.getItem("cefi2-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js" defer></script>
+<script src="js/calc.js" defer></script>
+</head>
+<body data-page="calculs">
+<header class="top">
+  <a class="brand" href="index.html">CEFI2 <small>· Calculateurs</small></a>
+  <span class="offline-badge">hors ligne</span>
+  <button class="iconbtn" id="theme-btn" type="button" aria-label="Changer de thème">☾</button>
+</header>
+
+<main>
+<h1>Mini-calculateurs</h1>
+<p class="lead">Pour <b>vérifier</b> tes calculs faits à la main (à l'examen, seule la calculatrice est autorisée).</p>
+<nav class="chips" aria-label="Calculateurs">
+  <a href="#c-van">VAN · IP · délai</a><a href="#c-sr">Seuil de rentabilité</a><a href="#c-tco">TCO</a>
+</nav>
+
+<section class="card" id="c-van">
+  <h2>VAN, IP, délai de récupération</h2>
+  <label class="fld" for="v-i0">Investissement initial (€)</label>
+  <input id="v-i0" type="text" inputmode="decimal" placeholder="120000">
+  <label class="fld" for="v-rate">Taux d'actualisation (%)</label>
+  <input id="v-rate" type="text" inputmode="decimal" placeholder="8">
+  <label class="fld" for="v-flows">Flux nets des années 1, 2, 3… (un par ligne, ou séparés par ;)</label>
+  <textarea id="v-flows" placeholder="30000&#10;40000&#10;45000&#10;35000&#10;30000"></textarea>
+  <div class="btnrow">
+    <button type="button" class="btn primary" id="v-go">Calculer</button>
+    <button type="button" class="btn" data-calc="v" data-example='{"v-i0":"1000000","v-rate":"8","v-flows":"500000\n500000\n350000\n250000"}'>Exemple du cours</button>
+  </div>
+  <div id="v-out" class="out" aria-live="polite"><p class="muted">Résultats ici.</p></div>
+</section>
+
+<section class="card" id="c-sr">
+  <h2>Seuil de rentabilité</h2>
+  <div class="chips" role="radiogroup" aria-label="Mode">
+    <label class="chip"><input type="radio" name="s-mode" value="global" checked> En CA global</label>
+    <label class="chip"><input type="radio" name="s-mode" value="unit"> Par unité / client</label>
+  </div>
+  <label class="fld" for="s-cf">Charges fixes (amortissements compris) (€)</label>
+  <input id="s-cf" type="text" inputmode="decimal" placeholder="5000">
+  <div id="s-global">
+    <label class="fld" for="s-ca">Chiffre d'affaires (€)</label>
+    <input id="s-ca" type="text" inputmode="decimal" placeholder="28000">
+    <label class="fld" for="s-cv">Coûts variables (€)</label>
+    <input id="s-cv" type="text" inputmode="decimal" placeholder="20000">
+  </div>
+  <div id="s-unit" hidden>
+    <label class="fld" for="s-pu">Prix unitaire (€)</label>
+    <input id="s-pu" type="text" inputmode="decimal" placeholder="15000">
+    <label class="fld" for="s-cvu">Coût variable unitaire (€)</label>
+    <input id="s-cvu" type="text" inputmode="decimal" placeholder="3000">
+    <label class="fld" for="s-q">Quantité prévue (facultatif)</label>
+    <input id="s-q" type="text" inputmode="decimal" placeholder="60">
+  </div>
+  <div class="btnrow">
+    <button type="button" class="btn primary" id="s-go">Calculer</button>
+    <button type="button" class="btn" data-calc="s" data-example='{"mode":"global","s-cf":"5000","s-ca":"28000","s-cv":"20000"}'>Exemple du cours</button>
+  </div>
+  <div id="s-out" class="out" aria-live="polite"><p class="muted">Résultats ici.</p></div>
+</section>
+
+<section class="card" id="c-tco">
+  <h2>TCO de deux solutions</h2>
+  <p class="muted">Unités libres (€ ou k€), mais les mêmes partout. Run total d'une année = Run fixe + coût variable × volume.</p>
+  <label class="fld" for="t-n">Durée (années)</label>
+  <input id="t-n" type="text" inputmode="numeric" placeholder="5">
+  <label class="fld" for="t-vol">Volume par année (utilisateurs, postes… ; un par ligne ou séparés par ;)</label>
+  <textarea id="t-vol" placeholder="5000&#10;10000&#10;18000&#10;30000&#10;45000"></textarea>
+  <div class="grid">
+    <div>
+      <h3>Solution A</h3>
+      <label class="fld" for="t-ab">Build</label><input id="t-ab" type="text" inputmode="decimal">
+      <label class="fld" for="t-af">Run fixe / an</label><input id="t-af" type="text" inputmode="decimal">
+      <label class="fld" for="t-av">Coût var. / unité / an</label><input id="t-av" type="text" inputmode="decimal">
+    </div>
+    <div>
+      <h3>Solution B</h3>
+      <label class="fld" for="t-bb">Build</label><input id="t-bb" type="text" inputmode="decimal">
+      <label class="fld" for="t-bf">Run fixe / an</label><input id="t-bf" type="text" inputmode="decimal">
+      <label class="fld" for="t-bv">Coût var. / unité / an</label><input id="t-bv" type="text" inputmode="decimal">
+    </div>
+  </div>
+  <div class="btnrow">
+    <button type="button" class="btn primary" id="t-go">Calculer</button>
+    <button type="button" class="btn" data-calc="t" data-example='{"t-n":"5","t-vol":"5000\n10000\n18000\n30000\n45000","t-ab":"750","t-af":"250","t-av":"0","t-bb":"80","t-bf":"330","t-bv":"0,0042"}'>Exemple GamaIA (k€)</button>
+  </div>
+  <p class="muted">L'exemple GamaIA omet l'extension de l'année 5 (250 k€ + 15 k€ de maintenance) : ajoute-la à la main → TCO A = 2 265 k€.</p>
+  <div id="t-out" class="out" aria-live="polite"><p class="muted">Résultats ici.</p></div>
+</section>
+</main>
+
+<nav class="tabs" aria-label="Navigation principale">
+  <a href="cours.html" data-page="cours"><span aria-hidden="true">📘</span>Cours</a>
+  <a href="formulaire.html" data-page="formulaire"><span aria-hidden="true">∑</span>Formules</a>
+  <a href="methodes.html" data-page="methodes"><span aria-hidden="true">🧭</span>Méthodes</a>
+  <a href="exercices.html" data-page="exercices"><span aria-hidden="true">✍️</span>Exos</a>
+  <a href="quiz.html" data-page="quiz"><span aria-hidden="true">❓</span>Quiz</a>
+  <a href="calculs.html" data-page="calculs"><span aria-hidden="true">🧮</span>Calculs</a>
+</nav>
+</body>
+</html>

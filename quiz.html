@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz · CEFI2</title>
+<meta name="description" content="QCM CEFI2 : définitions, interprétation, calculs de tête.">
+<meta name="theme-color" content="#f6f5f1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<script>try{var t=localStorage.getItem("cefi2-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js" defer></script>
+<script src="js/quiz-data.js" defer></script>
+<script src="js/quiz.js" defer></script>
+</head>
+<body data-page="quiz">
+<header class="top">
+  <a class="brand" href="index.html">CEFI2 <small>· Quiz</small></a>
+  <span class="offline-badge">hors ligne</span>
+  <button class="iconbtn" id="theme-btn" type="button" aria-label="Changer de thème">☾</button>
+</header>
+
+<main>
+<section id="q-setup">
+  <h1>Quiz</h1>
+  <p class="lead">QCM tirés au hasard, réponses mélangées, explication après chaque question. Les calculs se font de tête ou à la calculatrice.</p>
+  <h3>Partie</h3>
+  <div class="chips" role="group" aria-label="Partie">
+    <button type="button" class="chip" data-part="all" aria-pressed="true">Tout</button>
+    <button type="button" class="chip" data-part="1" aria-pressed="false">P1 · Coûts</button>
+    <button type="button" class="chip" data-part="2" aria-pressed="false">P2 · Rentabilité</button>
+    <button type="button" class="chip" data-part="3" aria-pressed="false">P3 · BP</button>
+    <button type="button" class="chip" data-part="wrong" aria-pressed="false">Mes erreurs (<span id="q-wrong-n">0</span>)</button>
+  </div>
+  <h3>Nombre de questions</h3>
+  <div class="chips" role="group" aria-label="Nombre de questions">
+    <button type="button" class="chip" data-n="10" aria-pressed="true">10</button>
+    <button type="button" class="chip" data-n="20" aria-pressed="false">20</button>
+    <button type="button" class="chip" data-n="0" aria-pressed="false">Toutes</button>
+  </div>
+  <p class="muted" id="q-avail"></p>
+  <button type="button" class="btn primary block" id="q-start">Commencer</button>
+  <p class="muted" id="q-best" style="margin-top:14px"></p>
+</section>
+
+<section id="q-play" hidden>
+  <div class="q-meta"><span id="q-count"></span><span id="q-score"></span></div>
+  <div class="q-progress"><i id="q-bar"></i></div>
+  <span class="badge" id="q-part"></span>
+  <p class="q-text" id="q-text" aria-live="polite"></p>
+  <div class="opts" id="q-opts"></div>
+  <div id="q-expl" class="expl" hidden aria-live="polite"></div>
+  <div class="btnrow">
+    <button type="button" class="btn primary" id="q-next" hidden>Question suivante →</button>
+  </div>
+  <button type="button" class="btn" id="q-quit" style="margin-top:8px">Arrêter</button>
+</section>
+
+<section id="q-end" hidden>
+  <h1>Résultat</h1>
+  <p class="score-big" id="q-final"></p>
+  <p style="text-align:center" id="q-final-msg"></p>
+  <button type="button" class="btn primary block" id="q-again">Nouveau quiz</button>
+</section>
+</main>
+
+<nav class="tabs" aria-label="Navigation principale">
+  <a href="cours.html" data-page="cours"><span aria-hidden="true">📘</span>Cours</a>
+  <a href="formulaire.html" data-page="formulaire"><span aria-hidden="true">∑</span>Formules</a>
+  <a href="methodes.html" data-page="methodes"><span aria-hidden="true">🧭</span>Méthodes</a>
+  <a href="exercices.html" data-page="exercices"><span aria-hidden="true">✍️</span>Exos</a>
+  <a href="quiz.html" data-page="quiz"><span aria-hidden="true">❓</span>Quiz</a>
+  <a href="calculs.html" data-page="calculs"><span aria-hidden="true">🧮</span>Calculs</a>
+</nav>
+</body>
+</html>

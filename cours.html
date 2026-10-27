@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiches de cours · CEFI2</title>
+<meta name="description" content="Fiches de cours CEFI2 : coûts, rentabilité de projet, business plan.">
+<meta name="theme-color" content="#f6f5f1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<script>try{var t=localStorage.getItem("cefi2-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="cours">
+<header class="top">
+  <a class="brand" href="index.html">CEFI2 <small>· Fiches</small></a>
+  <span class="offline-badge">hors ligne</span>
+  <button class="iconbtn" id="theme-btn" type="button" aria-label="Changer de thème">☾</button>
+</header>
+
+<main>
+<h1>Fiches de cours</h1>
+<p class="lead">Synthèse des 3 parties du cours. <span class="tag">complément</span> = précision qui n'est pas dans les slides.</p>
+<nav class="chips" aria-label="Parties">
+  <a href="#p1">Partie 1 · Coûts</a>
+  <a href="#p2">Partie 2 · Rentabilité</a>
+  <a href="#p3">Partie 3 · Business plan</a>
+</nav>
+
+<!-- ======================================================= PARTIE 1 -->
+<h2 id="p1">Partie 1 — Chiffrer un projet, la relation coût-valeur</h2>
+<p class="muted">« Pourquoi un projet coûte-t-il… et que rapporte-t-il ? »</p>
+
+<details class="fold" id="p1-valeur" open>
+<summary>1. Décider avec un éclairage économique</summary>
+<div class="body">
+  <div class="key"><p>Les décisions techniques ne peuvent pas être prises uniquement sur la base des critères technologiques.</p></div>
+  <p>La bonne question n'est pas « est-ce techniquement intéressant ? » mais <b>« cette fonctionnalité créera-t-elle suffisamment de valeur pour justifier son coût ? »</b></p>
+  <ul>
+    <li><b>Valeur perçue par le client</b> : appli bancaire, la version B (biométrie, tableau de bord IA, alertes) coûte 200 000 € de plus. Les clients sont-ils prêts à payer davantage ?</li>
+    <li><b>Rapport coût-valeur</b> : cybersécurité, option 1 = −20 % de temps de détection pour 300 000 € ; option 2 (IA comportementale) = −30 % pour 900 000 €. Les 10 points de plus justifient-ils un coût 3 fois plus élevé ?</li>
+    <li><b>Valeur nette</b> : maintenance prédictive, V1 coûte 300 K€ et se vendrait 400 K€, V2 400 → 700 K€, V3 800 → 850 K€. On choisit la solution qui crée <b>le plus de valeur nette</b> : V2 (+300 K€, contre +100 K€ et +50 K€).</li>
+  </ul>
+  <div class="key"><p>Une performance technique plus élevée n'a d'intérêt que si le client la perçoit comme une valeur supplémentaire et qu'il est prêt à la payer.</p></div>
+  <p>Chaîne de raisonnement : décision technique → amélioration → valeur perçue (gain de temps, baisse des coûts, qualité…) → acceptation de payer → le projet est-il rentable (ROI) ?</p>
+  <div class="key"><p><b>Rôle de l'ingénieur :</b> optimiser les coûts tout en créant le maximum de valeur pour le client. L'ingénieur est un acteur majeur de l'optimisation des coûts.</p></div>
+  <label class="done-toggle"><input type="checkbox" data-done="p1-valeur"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<details class="fold" id="p1-rappels">
+<summary>2. Rappels : résultat, bilan, BFR, profitabilité / rentabilité</summary>
+<div class="body">
+  <ul>
+    <li><b>Résultat</b> = produits − charges (bénéfice ou perte). Il décrit l'activité et enrichit ou appauvrit le patrimoine.</li>
+    <li><b>Bilan</b> = patrimoine de l'entreprise à un instant T (ce qu'elle possède et ce qu'elle doit).</li>
+    <li>Les décisions techniques impactent la <b>performance</b> (ex. algorithme d'optimisation des livraisons → baisse des coûts de transport) et la <b>structure financière</b> (ex. acheter des serveurs autofinancés → actif ↑ et fonds de roulement ↓ ; le choix d'un fournisseur peut impacter le BFR via les délais de paiement ou un stock minimum).</li>
+    <li><b>Résultat ≠ trésorerie</b> : décalages de paiement et charges non décaissables (amortissements).</li>
+  </ul>
+  <h3>BFR — besoin en fonds de roulement</h3>
+  <p>L'argent que l'entreprise doit <b>avancer</b> avant de recevoir l'argent de ses clients. Il y a un BFR dès que la partie du cycle d'exploitation à financer par l'entreprise est supérieure à celle financée par le fournisseur.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Étape</th><th>Date</th><th>Jour</th></tr></thead>
+    <tbody>
+      <tr><th>Réception des marchandises</th><td>1er mars</td><td class="n">0</td></tr>
+      <tr><th>Paiement du fournisseur</th><td>15 avril</td><td class="n">45</td></tr>
+      <tr><th>Vente au client</th><td>15 mai</td><td class="n">75</td></tr>
+      <tr><th>Date de paiement prévue</th><td>30 juin</td><td class="n">120</td></tr>
+      <tr><th>Paiement effectif du client</th><td>20 juillet</td><td class="n">140</td></tr>
+    </tbody></table></div>
+  <p>Le fournisseur finance les 45 premiers jours ; l'entreprise finance le reste du stock et les créances clients, soit de J45 à J140 (95 jours).</p>
+  <p><b>ESN</b> : elle paie ses salariés chaque mois mais ses clients la règlent plusieurs semaines ou mois après la prestation → besoin de trésorerie permanent = BFR.</p>
+  <h3>Profitabilité ≠ rentabilité</h3>
+  <dl class="defs">
+    <dt>Profitabilité</dt><dd>Rapport du résultat au <b>CA</b> : capacité à générer du profit à partir du CA. EBIT / CA (1 € de CA génère combien de marge opérationnelle ?) ; résultat net / CA = taux de marge bénéficiaire.</dd>
+    <dt>Rentabilité</dt><dd>Capacité à dégager du profit à partir des <b>ressources engagées</b>. Rentabilité financière = résultat net / capitaux propres. (Rentabilité économique : voir partie 3.)</dd>
+  </dl>
+  <label class="done-toggle"><input type="checkbox" data-done="p1-rappels"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<details class="fold" id="p1-couts">
+<summary>3. Les catégories de coûts</summary>
+<div class="body">
+  <p><b>Coût</b> = valeur des consommations (achats et charges) nécessaires à la conception, au déploiement et à l'exploitation d'une solution. Il faut valoriser <i>toutes</i> les ressources mobilisées : salaires bruts + charges, licences, matériel de test, serveurs, cloud, déplacements…</p>
+  <div class="key"><p>Le coût d'un projet, ce n'est pas que le temps de développement.</p></div>
+  <dl class="defs">
+    <dt>Charges directes</dt><dd>Directement affectables au projet, produit ou service (ex. les 4 ingénieurs dédiés au projet). Périmètre d'action de l'ingénieur.</dd>
+    <dt>Charges indirectes</dt><dd>Communes à plusieurs projets (locaux, réseau informatique, protection du SI…). L'entreprise doit pouvoir les financer : on les affecte aux projets.</dd>
+    <dt>Charges variables</dt><dd>Varient avec le niveau d'activité (SaaS : hébergement cloud, stockage, support client).</dd>
+    <dt>Charges fixes</dt><dd>Restent identiques quel que soit le niveau d'activité (loyers, abonnements logiciels annuels, une partie des salaires, <b>amortissements</b> des serveurs déjà achetés).</dd>
+  </dl>
+  <h3>Coûts issus de la gestion</h3>
+  <ol>
+    <li><b>Coût d'achat</b> = achats + frais d'approvisionnement jusqu'à la mise en stock.</li>
+    <li><b>Coût de production</b> = coût d'achat des matières consommées + charges des opérations de production (salaires, amortissements, énergie, location de matériel…).</li>
+    <li><b>Coût de distribution</b> (commercialisation, vente) = marketing, publicité, force de vente, livraison, préparation des commandes, SAV…</li>
+  </ol>
+  <div class="key"><p>Une décision technique peut influer sur la structure des coûts : <b>serveurs achetés</b> → plus de coûts fixes (amortissements) ; <b>cloud</b> → plus de coûts variables. Le choix dépend de la stratégie et des contraintes économiques et financières.</p></div>
+  <div class="tw"><table>
+    <thead><tr><th>Décision technique</th><th>Conséquence sur les coûts</th><th>Conséquence entreprise</th></tr></thead>
+    <tbody>
+      <tr><th>Internaliser le développement</th><td>salaires ↑, sous-traitance ↓</td><td>performance</td></tr>
+      <tr><th>Passer au cloud</th><td>abonnements ↑, investissements ↓</td><td>patrimoine et performance</td></tr>
+      <tr><th>Acheter des serveurs</th><td>amortissements ↑, cloud ↓</td><td>patrimoine et performance</td></tr>
+    </tbody></table></div>
+  <label class="done-toggle"><input type="checkbox" data-done="p1-couts"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<details class="fold" id="p1-tco">
+<summary>4. Build, Run et TCO</summary>
+<div class="body">
+  <p>« Très bien… et après ? » : une fois la solution développée, combien va-t-elle <b>encore</b> coûter ? Les coûts changent selon la phase du cycle de vie.</p>
+  <dl class="defs">
+    <dt>BUILD (conception – développement)</dt><dd>Analyse des besoins, conception, développement, tests, formation des utilisateurs…</dd>
+    <dt>RUN (exploitation, évolution, fin de vie)</dt><dd>Hébergement, licences annuelles, supervision, maintenance, cybersécurité, sauvegarde ; nouvelles fonctionnalités, adaptations réglementaires, modernisation, remplacement ; désinstallation, migration et archivage des données.</dd>
+    <dt>TCO — coût total de possession (Total Cost of Ownership)</dt><dd>TCO = Build + Run sur toute la durée de vie.</dd>
+  </dl>
+  <p><b>Exemple 1</b> (8 ans) : A = 900 K€ de Build + 250 K€ de Run = 1 150 K€ ; B = 500 + 950 = 1 450 K€. B paraît moins chère au départ, A coûte le moins cher à l'entreprise.</p>
+  <p><b>Exemple 2</b> : A (code modulaire, documenté) Build 900, Run 8 ans 480 (maintenance 120, évolutions 180, migration 80, remplacement 100) → TCO 1 380 K€ ; B (rapide, peu documenté) Build 600, Run 1 230 (450 + 420 + 180 + 180) → TCO 1 830 K€.</p>
+  <div class="key"><p><b>Une décision qui augmente le coût initial peut réduire fortement le coût global.</b></p></div>
+  <ul>
+    <li>Automatiser les tests → coût initial ↑, coûts de correction ↓</li>
+    <li>Code plus maintenable → coûts de maintenance ↓</li>
+    <li>Acheter des serveurs → Build ↑, coûts de cloud (Run) ↓</li>
+    <li>Utiliser un cloud → Build ↓, coûts d'exploitation (Run) ↑</li>
+  </ul>
+  <label class="done-toggle"><input type="checkbox" data-done="p1-tco"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<details class="fold" id="p1-dc">
+<summary>5. Relation coût-valeur et direct costing</summary>
+<div class="body">
+  <p>La décision dépend de la relation entre coût et valeur créée. Une innovation crée de la valeur si le client perçoit cette valeur <b>et</b> est prêt à la payer.</p>
+  <div class="key"><p>Il y a gain pour l'entreprise si la marge dégagée est supérieure aux coûts fixes.</p></div>
+  <div class="tw"><table>
+    <thead><tr><th>Direct costing</th><th>A</th><th>B</th><th>C</th><th>Total</th></tr></thead>
+    <tbody>
+      <tr><th>CA</th><td class="n">550 000</td><td class="n">190 000</td><td class="n">200 000</td><td class="n">940 000</td></tr>
+      <tr><th>Coûts directs variables</th><td class="n">260 000</td><td class="n">120 000</td><td class="n">202 000</td><td class="n">582 000</td></tr>
+      <tr class="tot"><th>Marge sur coûts directs variables</th><td class="n">290 000</td><td class="n">70 000</td><td class="n neg">−2 000</td><td class="n">358 000</td></tr>
+      <tr><th>Taux de marge (taux de contribution)</th><td class="n">53 %</td><td class="n">37 %</td><td class="n">–</td><td class="n">38 %</td></tr>
+      <tr><th>Coûts fixes indirects</th><td></td><td></td><td></td><td class="n">345 000</td></tr>
+      <tr class="tot"><th>Résultat</th><td></td><td></td><td></td><td class="n">13 000</td></tr>
+    </tbody></table></div>
+  <p>Plus le taux de contribution est élevé, plus le produit contribue à financer les coûts fixes et à la rentabilité globale.</p>
+  <p><b>Produit C ?</b> Sa marge est négative (−2 000) : il ne couvre même pas ses coûts variables et ne contribue pas aux coûts fixes. Il faut revoir son prix ou ses coûts, ou envisager de l'arrêter (en vérifiant qu'il ne porte pas les ventes de A ou B <span class="tag">complément</span>).</p>
+  <div class="info"><p>Taux exacts : A = 52,7 %, B = 36,8 %, total = 38,1 % (arrondis sur la slide).</p></div>
+  <label class="done-toggle"><input type="checkbox" data-done="p1-dc"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<!-- ======================================================= PARTIE 2 -->
+<h2 id="p2">Partie 2 — Rentabilité de projet</h2>
+
+<details class="fold" id="p2-delai">
+<summary>1. Délai de récupération</summary>
+<div class="body">
+  <p>Deux questions : l'investissement sera-t-il compensé par les gains ? En combien de temps le récupère-t-on ?</p>
+  <div class="formula">Délai = temps nécessaire pour que Σ flux cumulés = investissement</div>
+  <p>Flux constants : délai = coût du projet / gain annuel. Ex. : solution IA de saisie des factures, coût 150 000 € (développement 120 000 + formation 30 000), gains 50 000 €/an → <b>3 ans</b> (cumuls −100 000, −50 000, 0, +50 000… +250 000 en N8).</p>
+  <ul>
+    <li>Toujours préciser la <b>durée de vie économique</b> : délai 4 ans pour une durée de vie de 3 ans = projet remplacé avant d'avoir été récupéré ; 5 ans = pourrait être accepté ; 8 ans = OK. (Appli : 3 à 5 ans à titre indicatif.)</li>
+    <li>C'est un critère de <b>liquidité</b> plus que de rentabilité : il sélectionne les projets qui rendent vite les capitaux investis. L'entreprise peut fixer une norme (tout projet au-delà d'un délai est rejeté).</li>
+    <li><b>Limite</b> : il ignore ce qui se passe après. A (−100 000 ; 40 000 ; 40 000 ; 20 000) et B (même chose puis 20 000/an jusqu'en N8) ont le même délai de 3 ans, mais B crée plus de richesse (+100 000).</li>
+    <li>Il ignore aussi le <b>moment</b> où arrivent les flux : deux projets à 1 600 000 € de flux totaux (500/500/350/250 K€ contre 150/300/500/650 K€) ne se valent pas.</li>
+  </ul>
+  <p>Exemple de l'introduction : un investissement de 800 K€ qui rapporte 1 600 K€ mais n'est rentable qu'au bout de 6 ans → forte probabilité que la technologie soit dépassée, et pendant 6 ans il faut rembourser, payer les salaires, financer les mises à jour.</p>
+  <label class="done-toggle"><input type="checkbox" data-done="p2-delai"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<details class="fold" id="p2-van">
+<summary>2. Actualisation et VAN</summary>
+<div class="body">
+  <p>Pourquoi 1 € de demain vaut moins que 1 € d'aujourd'hui (prime de 200 000 € en 2027 ou en 2032 ?) :</p>
+  <ul>
+    <li>plus on encaisse tôt, plus vite on finance ses dépenses ;</li>
+    <li>l'investissement a un <b>coût financier</b> (actionnaires qui attendent un retour, ou frais financiers d'un emprunt) ;</li>
+    <li>un flux lointain est plus <b>incertain</b> (technologie, concurrence, besoins) ;</li>
+    <li><b>coût d'opportunité</b> : ce qui est investi dans le projet ne l'est pas ailleurs.</li>
+  </ul>
+  <p>Pour comparer, on exprime tout en valeur d'aujourd'hui : c'est l'<b>actualisation</b>. Le <b>taux d'actualisation</b> reflète le coût des capitaux et le risque : coût du capital (coût moyen pondéré des sources de financement), coût d'opportunité, ou taux de rentabilité fixé par l'entreprise.</p>
+  <div class="formula">VAN = Σ Flux<sub>t</sub> × (1 + i)<sup>−t</sup> − I<sub>0</sub></div>
+  <div class="formula">VAN = F<sub>1</sub>(1+i)<sup>−1</sup> + F<sub>2</sub>(1+i)<sup>−2</sup> + … + F<sub>n</sub>(1+i)<sup>−n</sup> − I<sub>0</sub></div>
+  <p>Exemple (taux 8 %, investissement 1 000 000 €) :</p>
+  <div class="tw"><table>
+    <thead><tr><th>€</th><th>N1</th><th>N2</th><th>N3</th><th>N4</th><th>Total</th></tr></thead>
+    <tbody>
+      <tr><th>Projet A</th><td class="n">500 000</td><td class="n">500 000</td><td class="n">350 000</td><td class="n">250 000</td><td class="n">1 600 000</td></tr>
+      <tr><th>A actualisé</th><td class="n">462 963</td><td class="n">428 669</td><td class="n">277 841</td><td class="n">183 757</td><td class="n">1 353 231</td></tr>
+      <tr><th>Projet B</th><td class="n">150 000</td><td class="n">300 000</td><td class="n">500 000</td><td class="n">650 000</td><td class="n">1 600 000</td></tr>
+      <tr><th>B actualisé</th><td class="n">138 889</td><td class="n">257 202</td><td class="n">396 916</td><td class="n">477 769</td><td class="n">1 270 776</td></tr>
+    </tbody></table></div>
+  <p>VAN A = 1 353 231 − 1 000 000 = <b>353 231</b> ; VAN B = <b>270 776</b>. Les deux sont rentables, mais A crée plus de valeur → <b>choix A</b>.</p>
+  <div class="key"><p>Un seul projet : on l'accepte si <b>VAN &gt; 0</b>. Plusieurs projets : on choisit la VAN la plus élevée.</p></div>
+  <div class="info"><p>Le taux (8 %) n'est pas écrit sur la slide : on le retrouve car 462 963 = 500 000 / 1,08. La slide additionne les valeurs exactes (1 353 231) ; en additionnant les flux déjà arrondis à l'euro, comme sur ce site, on trouve 1 353 230 €. Les deux sont justes.</p></div>
+  <label class="done-toggle"><input type="checkbox" data-done="p2-van"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<details class="fold" id="p2-ip">
+<summary>3. Indice de profitabilité, TRI, ROI</summary>
+<div class="body">
+  <div class="formula">IP = Σ flux actualisés / investissement</div>
+  <p>IP A = 1 353 231 / 1 000 000 = <b>1,35</b> : pour 1 € investi aujourd'hui, le projet génère 1,35 € de valeur actuelle, soit 0,35 € de richesse supplémentaire. IP B = 1,27.</p>
+  <div class="warn"><p>⚠️ Coquille sur la slide 11 : la ligne « IP A = 1 270 776 / 1 000 000 = 1,27 » concerne <b>IP B</b>.</p></div>
+  <p>IP &gt; 1 ⇔ VAN &gt; 0. <span class="tag">complément</span> L'IP permet de comparer des projets de tailles différentes (richesse créée par euro investi).</p>
+  <h3>TRI — taux interne de rentabilité</h3>
+  <p>Le taux d'actualisation mesure ce que l'entreprise exige pour investir. Si la VAN est positive à 8 %, elle s'annule pour un taux plus élevé, par exemple 12 % : le projet supporte un coût du capital jusqu'à 12 %, il génère un rendement interne de 12 %.</p>
+  <div class="formula">TRI = taux i tel que VAN(i) = 0</div>
+  <p><span class="tag">complément</span> On accepte le projet si TRI &gt; taux exigé. Sans tableur, on le trouve par essais successifs (calculateur de ce site).</p>
+  <h3>ROI</h3>
+  <div class="formula">ROI = bénéfices générés par l'investissement / investissement initial</div>
+  <p>Souvent utilisé mais moins intéressant. <b>Limites :</b> il ne tient compte ni du temps, ni du risque, ni du coût du capital, et peut faire passer pour équivalents des projets très différents.</p>
+  <h3>Remarques</h3>
+  <ul>
+    <li><b>Arbitrage liquidité / rentabilité</b> : on peut préférer récupérer vite sa mise (moins de risque, obsolescence) plutôt qu'une rentabilité supérieure, surtout pour des investissements courts (&lt; 5 ans).</li>
+    <li>L'argent n'a pas la même valeur dans le temps : 1 € placé à 15 % vaut 1,15 € dans un an ; 1 € de N+1 vaut 1 / 1,15 = 0,870 € aujourd'hui.</li>
+  </ul>
+  <div class="warn"><p>⚠️ La slide 13 écrit 0,869 : c'est une troncature, l'arrondi au millième de 0,86957 est <b>0,870</b>.</p></div>
+  <label class="done-toggle"><input type="checkbox" data-done="p2-ip"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<!-- ======================================================= PARTIE 3 -->
+<h2 id="p3">Partie 3 — Business plan et rentabilité économique</h2>
+
+<details class="fold" id="p3-bp">
+<summary>1. Business model et business plan</summary>
+<div class="body">
+  <p>Démarche : valeur apportée au client → coûts générés (chiffrage) → niveau d'activité plancher (SR) → rentabilité suffisante pour justifier l'investissement ? → le projet est-il viable, peut-on le financer ? (business plan)</p>
+  <dl class="defs">
+    <dt>Business plan</dt><dd>Démontre la faisabilité économique et financière d'un projet : comment le résultat est généré, les leviers de performance, comment il est financé, les conséquences financières. Il formalise le projet, explique la création de valeur et confirme la pertinence économique du modèle. Questions : combien cela va coûter, rapporter, combien faudra-t-il financer ?</dd>
+    <dt>Business model (modèle d'affaires)</dt><dd>En amont des chiffres : comment l'entreprise <b>crée, délivre et capte</b> de la valeur, quelle que soit sa phase de développement.</dd>
+    <dt>Business Model Canvas</dt><dd>Outil d'analyse et de conception stratégique (création d'entreprise, lancement d'un produit numérique).</dd>
+  </dl>
+  <div class="bmc">
+    <div><b>Partenaires clés</b> : quels partenaires sont nécessaires ?</div>
+    <div><b>Activités clés</b></div>
+    <div><b>Ressources clés</b> : quelles ressources ?</div>
+    <div><b>Proposition de valeur</b> : nouveaux produits, moins chers, personnalisés, expérience utilisateur, durabilité…</div>
+    <div><b>Relations avec les clients</b></div>
+    <div><b>Canaux de distribution</b> : comment atteindre les clients ?</div>
+    <div><b>Segments de clientèle</b> : qui sont les clients ?</div>
+    <div><b>Structure de coûts</b></div>
+    <div><b>Sources de revenus</b></div>
+  </div>
+  <h3>Les 5 étapes du business plan</h3>
+  <ol>
+    <li><b>Proposition de valeur</b> : pourquoi le client achèterait ? Problème identifié (ex. pannes aléatoires, arrêts coûteux) → réponse (ex. −30 % de pannes, maintenance moins chère).</li>
+    <li><b>Chiffrer le projet</b> : coûts (Build, Run, CF et CV), revenus (nombre de clients × prix), seuil de rentabilité.</li>
+    <li><b>Résultat prévisionnel</b> simplifié (CA → CAF).</li>
+    <li><b>Rentabilité du projet</b> : délai de récupération, VAN.</li>
+    <li><b>Plan de financement</b> : les ressources suffisent-elles à couvrir les besoins ?</li>
+  </ol>
+  <div class="key"><p>Une innovation a de la valeur non pas parce qu'elle est innovante, mais parce qu'elle résout un problème.</p></div>
+  <label class="done-toggle"><input type="checkbox" data-done="p3-bp"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<details class="fold" id="p3-sr">
+<summary>2. Seuil de rentabilité, marge de sécurité</summary>
+<div class="body">
+  <p>Niveau des ventes à partir duquel on commence à faire du bénéfice (le projet couvre ses coûts). Pertinent pour un produit ou une activité homogène, beaucoup moins pour un portefeuille de projets.</p>
+  <div class="formula">MCV = CA − CV</div>
+  <div class="formula">TMCV = MCV / CA</div>
+  <div class="formula">Au seuil : TMCV × CA = CF  ⇒  SR = CF / TMCV</div>
+  <p><span class="tag">complément</span> Marge de sécurité = CA − SR (en % : (CA − SR) / CA) ; seuil en quantité = CF / MCV unitaire, arrondi à l'unité supérieure.</p>
+  <p><b>Exemple</b> : CA 28 000, CV 20 000, CF 5 000, résultat 3 000. TMCV = 8 000 / 28 000 = 28,57 %. SR = 5 000 / 0,2857 = <b>17 500 €</b>. Le CA peut baisser de 10 500 € (37,5 %) avant d'entrer en zone de perte.</p>
+  <p>Un investissement fait monter le CA de 20 % (33 600 €) mais les CF de 28 % (6 400 €) : SR = 22 400 €, résultat = 33 600 × 28,57 % − 6 400 = 3 200 € (↑), marge de sécurité = 33,3 % (↓). <b>Que privilégier, le résultat ou la sécurité ?</b></p>
+  <div class="warn"><p>⚠️ La slide arrondit le TMCV à 28,5 % (au lieu de 28,57 %) et obtient SR = 17 543, 22 456 et un résultat de 3 176. Les valeurs exactes sont 17 500, 22 400 et 3 200 ; la marge de sécurité initiale est 37,5 %. Les conclusions ne changent pas. En examen, garde la fraction 8 000/28 000 dans la calculatrice.</p></div>
+  <label class="done-toggle"><input type="checkbox" data-done="p3-sr"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<details class="fold" id="p3-cr">
+<summary>3. Résultat prévisionnel, CAF, plan de financement</summary>
+<div class="body">
+  <div class="tw"><table>
+    <thead><tr><th>Résultat prévisionnel</th><th>Année 1</th><th>Année 2</th><th>Année 3</th></tr></thead>
+    <tbody>
+      <tr><th>CA</th><td></td><td></td><td></td></tr><tr><th>− CV</th><td></td><td></td><td></td></tr>
+      <tr><th>− CF</th><td></td><td></td><td></td></tr><tr><th>− Amortissements</th><td></td><td></td><td></td></tr>
+      <tr class="tot"><th>= REX</th><td></td><td></td><td></td></tr><tr><th>− Frais financiers</th><td></td><td></td><td></td></tr>
+      <tr class="tot"><th>= Résultat avant IS</th><td></td><td></td><td></td></tr><tr><th>− IS</th><td></td><td></td><td></td></tr>
+      <tr class="tot"><th>= Résultat net</th><td></td><td></td><td></td></tr>
+      <tr class="tot"><th>CAF (flux nets potentiels de trésorerie)</th><td></td><td></td><td></td></tr>
+    </tbody></table></div>
+  <p>CAF = résultat net + amortissements <span class="tag">complément</span> (l'amortissement est une charge qui ne sort pas de la trésorerie).</p>
+  <h3>Plan de financement</h3>
+  <p>Vérifie que les ressources financières suffisent à financer le projet (comparaison besoins / ressources).</p>
+  <div class="tw"><table>
+    <thead><tr><th></th><th>N</th><th>N+1</th><th>N+2</th></tr></thead>
+    <tbody>
+      <tr><th>Ressources propres</th><td></td><td></td><td></td></tr><tr><th>Emprunts</th><td></td><td></td><td></td></tr>
+      <tr><th>CAF</th><td></td><td></td><td></td></tr><tr class="tot"><th>Ressources</th><td></td><td></td><td></td></tr>
+      <tr><th>Investissements</th><td></td><td></td><td></td></tr><tr><th>Besoins d'exploitation (BFR)</th><td></td><td></td><td></td></tr>
+      <tr class="tot"><th>Besoins</th><td></td><td></td><td></td></tr>
+      <tr><th>Flux net de trésorerie</th><td></td><td></td><td></td></tr><tr class="tot"><th>Flux nets cumulés</th><td></td><td></td><td></td></tr>
+    </tbody></table></div>
+  <p><b>BFR</b> : l'argent immobilisé temporairement pour faire fonctionner l'activité avant d'encaisser (licences payées d'avance, abonnements cloud, salaires versés avant le paiement des clients…).</p>
+  <ul>
+    <li>Le projet engage des dépenses avant d'enregistrer des recettes : stock si marchandises ; pour une prestation, charges à avancer avant de facturer (coût d'une journée de travail toutes charges comprises × nombre de jours).</li>
+    <li>Décalages entre dépenses et recettes dus aux délais de paiement.</li>
+    <li>Indispensable au plan de financement. On ne connaît pas les encours : moyenne du secteur ou % du CA. Ne pas oublier qu'il <b>varie avec le CA</b>.</li>
+  </ul>
+  <label class="done-toggle"><input type="checkbox" data-done="p3-cr"> J'ai revu cette fiche</label>
+</div>
+</details>
+
+<details class="fold" id="p3-re">
+<summary>4. Rentabilité économique</summary>
+<div class="body">
+  <p>A et B dégagent chacun 100 k€ de résultat. A a mobilisé 500 k€ de capitaux, B 1 000 k€ : <b>A est plus performant</b> (même résultat avec moins de ressources).</p>
+  <div class="key"><p>La rentabilité n'est pas qu'une affaire de CA et de résultat.</p></div>
+  <div class="formula">Ressources économiques (capital économique) = investissements + BFR</div>
+  <div class="formula">Re = REX (ou EBE) / ressources économiques mobilisées</div>
+  <div class="formula">Re = (REX / CA) × (CA / ressources économiques)</div>
+  <div class="formula">Re = taux de marge opérationnelle × taux de rotation de l'actif économique</div>
+  <ul>
+    <li><b>Taux de marge</b> : efficacité opérationnelle (revenus et maîtrise des coûts).</li>
+    <li><b>Rotation de l'actif</b> : capacité à générer de l'activité à partir des ressources mobilisées (attention au surdimensionnement).</li>
+  </ul>
+  <div class="tw"><table>
+    <thead><tr><th>k€</th><th>A mutualisé</th><th>B dédié</th><th>B (variante)</th></tr></thead>
+    <tbody>
+      <tr><th>Gains économiques (ou CA)</th><td class="n">1 500</td><td class="n">600</td><td class="n">600</td></tr>
+      <tr><th>Coûts d'exploitation</th><td class="n">1 350</td><td class="n">480</td><td class="n">540</td></tr>
+      <tr class="tot"><th>REX</th><td class="n">150</td><td class="n">120</td><td class="n">60</td></tr>
+      <tr><th>Actif économique</th><td class="n">500</td><td class="n">800</td><td class="n">800</td></tr>
+      <tr><th>Taux de marge</th><td class="n">10 %</td><td class="n">20 %</td><td class="n">10 %</td></tr>
+      <tr><th>Rotation</th><td class="n">3</td><td class="n">0,75</td><td class="n">0,75</td></tr>
+      <tr class="tot"><th>Rentabilité économique</th><td class="n">30 %</td><td class="n">15 %</td><td class="n">7,5 %</td></tr>
+    </tbody></table></div>
+  <p>B a la meilleure marge (ses économies sont plus fortes par rapport à ses coûts), mais A utilise bien mieux ses ressources (plus d'économies par euro investi) : <b>A est le plus performant</b>. Dans la variante, même marge (10 %) : l'écart vient uniquement de la rotation.</p>
+  <p class="muted">Si le projet vend des produits, on prend le CA ; ici il génère des économies de coûts.</p>
+  <div class="key"><p>Un projet n'est pas performant parce qu'il dégage un bénéfice. Il est performant s'il dégage un bénéfice suffisant au regard des capitaux, des compétences et des ressources mobilisés pour l'obtenir.</p></div>
+  <label class="done-toggle"><input type="checkbox" data-done="p3-re"> J'ai revu cette fiche</label>
+</div>
+</details>
+</main>
+
+<footer class="foot">Contenu tiré des supports de C. Doutriaux Longo (Efrei, CEFI2). Site de révision personnel.</footer>
+
+<nav class="tabs" aria-label="Navigation principale">
+  <a href="cours.html" data-page="cours"><span aria-hidden="true">📘</span>Cours</a>
+  <a href="formulaire.html" data-page="formulaire"><span aria-hidden="true">∑</span>Formules</a>
+  <a href="methodes.html" data-page="methodes"><span aria-hidden="true">🧭</span>Méthodes</a>
+  <a href="exercices.html" data-page="exercices"><span aria-hidden="true">✍️</span>Exos</a>
+  <a href="quiz.html" data-page="quiz"><span aria-hidden="true">❓</span>Quiz</a>
+  <a href="calculs.html" data-page="calculs"><span aria-hidden="true">🧮</span>Calculs</a>
+</nav>
+</body>
+</html>
